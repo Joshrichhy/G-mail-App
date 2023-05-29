@@ -1,0 +1,328 @@
+:root {
+    --code-color: darkred;
+    --code-bg-color: #f6f6f6;
+    --code-font-size: 14px;
+    --code-line-height: 1.4;
+    --scroll-bar-color: #c5c5c5;
+    --scroll-bar-bg-color: #f6f6f6;
+}
+
+pre {
+    color: var(--code-color);
+    font-size: var(--code-font-size);
+    line-height: var(--code-line-height);
+    background-color: var(--code-bg-color);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 2px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-bar-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+    border-radius: 20px;
+    border: 3px solid var(--scroll-bar-bg-color);
+}
+
+
+
+
+.main{
+    background-color: #bab4b4;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-size: cover;
+
+
+}
+
+.MailContainer{
+    position: absolute;
+    display: flex;
+    background-color: #2e2929;
+    height: 80vh;
+    width: 80vw;
+    margin-left: 10%;
+    margin-top: 5%;
+    border-radius: 2%;
+    border: solid 1px white ;
+
+}
+.colours{
+    display: flex;
+    gap: 5px;
+    position: fixed;
+    height: 5vh;
+    margin-top: 1%;
+    margin-left: 1%;
+
+
+
+}
+.Red{
+    border-radius: 50%;
+    background-color: red;
+    height: 2vh;
+    width: 1vw;
+}
+.Orange{
+    border-radius: 50%;
+    background-color: orangered;
+    height: 2vh;
+    width: 1vw;
+}
+.Green{
+    border-radius: 50%;
+    background-color: green;
+    height: 2vh;
+    width: 1vw;
+}
+.gmc{
+    overflow: scroll;
+    height: 70vh;
+    margin-top: 15%;
+}
+.MailFeatures{
+    width: 20vw;
+
+}
+
+
+
+.inbox{
+    color: white;
+    list-style-type: none;
+    display: flex;
+    height: 7vh;
+    width: 17vw;
+    margin-left: 7%;
+    border-radius: 6%;
+
+}
+
+.inbox:hover{
+    background-color: gray;
+
+}
+.GmailContent:hover{
+    background-color: gray;
+}
+
+.GmailContent{
+    background-color: #2222df;
+    display: flex;
+    height: 7vh;
+    width: 17vw;
+    margin-left: 7%;
+    border-radius: 6%;
+
+}
+
+.GmailContent p{
+    width: 10vh;
+    margin-left: -1%;
+    color: #f6f6f6;
+    margin-top: 5%;
+
+
+}
+.FolderContent{
+    color: #f6f6f6;
+    background-color: rebeccapurple;
+    display: flex;
+    height: 7vh;
+    width: 17vw;
+    margin-left: 7%;
+    justify-content: center;
+    border-radius: 6%;
+
+}
+.FolderContent:hover{
+
+    background-color: #bab4b4;
+}
+.mail{
+    margin-left: 5%;
+    width: 2vw;
+}
+
+
+.FeaturesDisplay{
+    border: solid 1px white;
+    border-right: none;
+    width: 30vw;
+    height: 79.5vh;
+    overflow: scroll;
+}
+
+.FeaturesDisplayContent{
+    width: 29.5vw;
+    border-bottom-left-radius: 20%;
+
+
+}
+.topBox{
+    overflow: scroll;
+    height: 65vh;
+}
+.InboxBar{
+    height: 10vh;
+    font-size: small;
+    position: static;
+    color: #f6f6f6;
+}
+.Inbox{
+    width: 8vw;
+    font-weight: bold ;
+    height: 10vh;
+    margin-top: 3%;
+
+
+}
+.inbox p{
+    width: 10vh;
+    margin-left: -1%;
+    color: #f6f6f6;
+    margin-top: 5%;
+}
+.inbox li{
+    width: 10vh;
+    margin-left: 25%;
+    color: #f6f6f6;
+    margin-top: 5%;
+}
+
+#noOfMessages{
+width: 17vw;
+    margin-top: -6%;
+    margin-right: 2%;
+    color: grey;
+    height: 5vh;
+    position: absolute;
+    font-size: smaller ;
+}
+.search{
+    color: #f6f6f6;
+    margin-top: -6%;
+    margin-right: 15%;
+    width: 22vw;
+    background-color: #282c34;
+    border-radius: 10%;
+    height: 4vh;
+}
+
+.AllInbox{
+   position: relative;
+    height: 25%;
+    border: solid white;
+    display: flex;
+
+
+}
+
+.AllInbox:hover{
+    background-color: grey;
+    box-sizing: border-box;
+}
+.Blue{
+    border-radius: 50%;
+    background-color: blue;
+    height: 2vh;
+    width: 1vw;
+    position: absolute;
+    margin-left: 90%;
+    margin-top: 10%;
+}
+
+.title{
+    position: absolute;
+    width: 1vw;
+    margin-left: 20%;
+    font-size: smaller;
+    color: #f6f6f6;
+}
+
+.time{
+    position: absolute;
+    width: 2vw;
+    font-size: small;
+    color: #f6f6f6;
+    margin-left: 80%;
+}
+
+.inboxContentPicture{
+    height: 30vh;
+    width: 25vw;
+
+}
+
+
+.profile{
+    display: flex;
+}
+.inboxInfo{
+    overflow: scroll;
+    height: 66.5vh;
+}
+.profilePicture{
+    height: 10vh;
+    width: 5vw;
+    border-radius: 50%;
+}
+.profilePicture1{
+    height: 7vh;
+    width: 3vw;
+    border-radius: 50%;
+    margin-left: 7%;
+    margin-top: 3%;
+}
+.description{
+    justify-content: center;
+    margin-right: 5%;
+    margin-left: 5%;
+    color: #bab4b4;
+}
+
+.down{
+    margin-left: 35%;
+    width: 2vw;
+
+}
+.down:hover{
+    background-color: #bab4b4;
+}
+
+.textTitle{
+    color: #f6f6f6;
+}
+
+.icons{
+    border-bottom: solid 1px white;
+    height: 9vh;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 7%;
+
+
+}
+.icon{
+    margin-top: 1%;
+    height: 3vh;
+}
+.icon:hover{
+    background-color: #bab4b4;
+    height: 4vh;
+    width: 3vw;
+}
+
