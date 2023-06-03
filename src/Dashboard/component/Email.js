@@ -23,6 +23,9 @@ function Email(){
     const [count1, setCount1] = useState(0)
     const [data, setData] = useState({})
     const [divId, setDivId] = useState(0)
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredArray, setFilteredArray] = useState(data);
+
 
 
     let url = "https://dummyjson.com/products"
@@ -42,7 +45,7 @@ function Email(){
                 setData (data.products);
                 setIsLoading (false);
             }
-            // setDataList(dataList.concat(data[6]))
+
         } catch (err) {
             setError (err.message);
             setIsLoading (false);
@@ -58,7 +61,7 @@ function Email(){
             fetchData ();
             return () => clearInterval (couter);
         },
-        [fetchData, count, arr.length, document.getElementsByClassName("AllInbox")]
+        [fetchData, count, arr.length]
     );
 
 
@@ -111,6 +114,23 @@ function Email(){
 
 
 
+    const handleSearch = () => {
+        const filteredData = data.filter(item => {
+            for (const key in item) {
+                const value = item[key];
+                if (typeof value === 'string' && value.toLowerCase().includes(searchQuery.toLowerCase())) {
+                    return true;
+                }
+            }
+            return false;
+        });
+
+        setFilteredArray(filteredData);
+    };
+
+
+
+
 
 
 
@@ -157,11 +177,30 @@ function Email(){
                    <p id="noOfMessages"> 2445 messages, 2 Unread</p>
 
                 </div>
-                <input className="search" placeholder={'     search'} />
+                <input className="search" placeholder={'     search'}  value={searchQuery}
+                       onChange={event => setSearchQuery(event.target.value)}/>
+                <button onClick={handleSearch}>Search</button>
+
+
+                {filteredArray && Array.isArray(filteredArray) && (
+                    <div>
+                        {filteredArray.map((value, index) => (
+                            <div className="AllInbox" onClick={() =>
+                                getDivId(value.id-1)}>
+                                <img className="profilePicture1" src={value.images[1]}/>
+                                <div className="title" key={index}>  {value.title}</div>
+                                <div className="time">14:35</div>
+                                <div className="Blue"></div>
+
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+
                 <div className="topBox">
                     {inboxClicked &&
-                        (error == "null"? <div>error loading, check network connection</div>:
-                            data.map((value, index) => (
+                        (data.map((value, index) => (
                     <div className="AllInbox" onClick={() =>
                         getDivId(value.id)}>
                         <img className="profilePicture1" src={value.images[1]}/>
